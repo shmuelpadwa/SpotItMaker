@@ -136,6 +136,9 @@ else:
 filename = 'PutSomethingHere'
 os.chdir(r'C:\Users\Shmuel\Documents\Python!!')
 os.mkdir(filename)
+
+rotatelist = [0,90,180,270]
+scalelist = [0.5, 0.6, 0.7, 0.8, 0.9, 1]
 boxes = [(0, 0, 256, 256), (0, 256, 256, 512), (256, 0, 512, 256), (256, 256, 512, 512), (512, 0, 768, 256), (512, 256, 768, 512), (768, 0, 1024, 256), (768, 256, 1024, 512)]
 if not math == False:
     random.shuffle(math)
@@ -144,14 +147,33 @@ if not math == False:
         random.shuffle(boxes)
 
         if y == 57:
-            myimage.paste(im = image_list[math[x][0]], box = boxes[0])
-            myimage.paste(im = image_list[math[x][1]], box = boxes[1])
-            myimage.paste(im = image_list[math[x][2]], box = boxes[2])
-            myimage.paste(im = image_list[math[x][3]], box = boxes[3])
-            myimage.paste(im = image_list[math[x][4]], box = boxes[4])
-            myimage.paste(im = image_list[math[x][5]], box = boxes[5])
-            myimage.paste(im = image_list[math[x][6]], box = boxes[6])
-            myimage.paste(im = image_list[math[x][7]], box = boxes[7])
+            
+            a= random.choice(rotatelist)
+            b= random.choice(rotatelist)
+            c= random.choice(rotatelist)
+            d= random.choice(rotatelist)
+            e= random.choice(rotatelist)
+            f= random.choice(rotatelist)
+            g= random.choice(rotatelist)
+            h= random.choice(rotatelist)
+            a1 = random.choice(scalelist)
+            b1 = random.choice(scalelist)
+            c1 = random.choice(scalelist)
+            d1 = random.choice(scalelist)
+            e1 = random.choice(scalelist)
+            f1 = random.choice(scalelist)
+            g1 = random.choice(scalelist)
+            h1 = random.choice(scalelist)
+            
+
+            myimage.paste(im = image_list[math[x][0]].rotate(a), box = boxes[0])
+            myimage.paste(im = image_list[math[x][1]].rotate(b), box = boxes[1])
+            myimage.paste(im = image_list[math[x][2]].rotate(c), box = boxes[2])
+            myimage.paste(im = image_list[math[x][3]].rotate(d), box = boxes[3])
+            myimage.paste(im = image_list[math[x][4]].rotate(e), box = boxes[4])
+            myimage.paste(im = image_list[math[x][5]].rotate(f), box = boxes[5])
+            myimage.paste(im = image_list[math[x][6]].rotate(g), box = boxes[6])
+            myimage.paste(im = image_list[math[x][7]].rotate(h), box = boxes[7])
         imname = "card" + str(x)
         myimage = myimage.save(filename + r'/' + imname + '.jpg')
 elif math == False:
