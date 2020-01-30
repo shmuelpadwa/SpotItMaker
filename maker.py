@@ -133,24 +133,25 @@ elif y == 57: # 57 = 7 * 7 + 7 + 1
 else:
     math = False
 
-filename = 'putsomethinghere'
+filename = 'PutSomethingHere'
 os.chdir(r'C:\Users\Shmuel\Documents\Python!!')
 os.mkdir(filename)
 boxes = [(0, 0, 256, 256), (0, 256, 256, 512), (256, 0, 512, 256), (256, 256, 512, 512), (512, 0, 768, 256), (512, 256, 768, 512), (768, 0, 1024, 256), (768, 256, 1024, 512)]
 if not math == False:
+    random.shuffle(math)
     for x in range(0, y):
         myimage = Image.new(mode = "RGB", size = (1024, 512), color = (255, 255, 255))
         random.shuffle(boxes)
 
         if y == 57:
-            myimage.paste(im = image_list[math[x][0]], box = (0, 0, 256, 256))
-            myimage.paste(im = image_list[math[x][1]], box = (0, 256, 256, 512))
-            myimage.paste(im = image_list[math[x][2]], box = (256, 0, 512, 256))
-            myimage.paste(im = image_list[math[x][3]], box = (256, 256, 512, 512))
-            myimage.paste(im = image_list[math[x][4]], box = (512, 0, 768, 256))
-            myimage.paste(im = image_list[math[x][5]], box = (512, 256, 768, 512))
-            myimage.paste(im = image_list[math[x][6]], box = (768, 0, 1024, 256))
-            myimage.paste(im = image_list[math[x][7]], box = (768, 256, 1024, 512))
+            myimage.paste(im = image_list[math[x][0]], box = boxes[0])
+            myimage.paste(im = image_list[math[x][1]], box = boxes[1])
+            myimage.paste(im = image_list[math[x][2]], box = boxes[2])
+            myimage.paste(im = image_list[math[x][3]], box = boxes[3])
+            myimage.paste(im = image_list[math[x][4]], box = boxes[4])
+            myimage.paste(im = image_list[math[x][5]], box = boxes[5])
+            myimage.paste(im = image_list[math[x][6]], box = boxes[6])
+            myimage.paste(im = image_list[math[x][7]], box = boxes[7])
         imname = "card" + str(x)
         myimage = myimage.save(filename + r'/' + imname + '.jpg')
 elif math == False:
