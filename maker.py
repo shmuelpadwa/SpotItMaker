@@ -138,7 +138,6 @@ os.chdir(r'C:\Users\Shmuel\Documents\Python!!')
 os.mkdir(filename)
 
 rotatelist = [0,90,180,270]
-scalelist = [0.5, 0.6, 0.7, 0.8, 0.9, 1]
 boxes = [(0, 0, 256, 256), (0, 256, 256, 512), (256, 0, 512, 256), (256, 256, 512, 512), (512, 0, 768, 256), (512, 256, 768, 512), (768, 0, 1024, 256), (768, 256, 1024, 512)]
 if not math == False:
     random.shuffle(math)
@@ -156,14 +155,6 @@ if not math == False:
             f= random.choice(rotatelist)
             g= random.choice(rotatelist)
             h= random.choice(rotatelist)
-            a1 = random.choice(scalelist)
-            b1 = random.choice(scalelist)
-            c1 = random.choice(scalelist)
-            d1 = random.choice(scalelist)
-            e1 = random.choice(scalelist)
-            f1 = random.choice(scalelist)
-            g1 = random.choice(scalelist)
-            h1 = random.choice(scalelist)
             
 
             myimage.paste(im = image_list[math[x][0]].rotate(a), box = boxes[0])
